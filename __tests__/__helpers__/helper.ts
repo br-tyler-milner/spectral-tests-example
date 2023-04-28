@@ -25,7 +25,7 @@ export default (ruleName: RuleName, tests: Scenario): void => {
         const concurrent = tests.every(test => test.mocks === void 0 || Object.keys(test.mocks).length === 0);
         for (const testCase of tests) {
             (concurrent ? it.concurrent : it)(testCase.name, async () => {
-                const s = createWithRules([ruleName]);
+                const s = await createWithRules([ruleName]);
                 const doc = testCase.document instanceof Document ? testCase.document : JSON.stringify(testCase.document);
                 const errors = await s.run(doc);
                 expect(errors.filter(({ code }) => code === ruleName)).toEqual(
@@ -36,12 +36,12 @@ export default (ruleName: RuleName, tests: Scenario): void => {
     });
 };
 
-export function createWithRules(rules: (keyof Ruleset['rules'])[]): Spectral {
+export async function createWithRules(rules: (keyof Ruleset['rules'])[]): Promise<Spectral> {
     const s = new Spectral({ resolver: httpAndFileResolver });
 
     // Load the ruleset from .spectral.yaml file
     const filePath = path.resolve("../../../.spectral.yaml")
-    const myRuleset = bundleAndLoadRuleset(path.resolve(filePath), { fs, fetch })
+    const myRuleset = await bundleAndLoadRuleset(path.resolve(filePath), { fs, fetch })
 
     s.setRuleset({
         extends: [
