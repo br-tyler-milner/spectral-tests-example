@@ -46,7 +46,7 @@ export async function createWithRules(rules: (keyof Ruleset['rules'])[]): Promis
 
     s.setRuleset({
         extends: [
-            [myRuleset as RulesetDefinition, 'off'],
+            [myRuleset.definition as RulesetDefinition, 'off'],
         ],
         rules: rules.reduce((obj, name) => {
             obj[name] = true;
