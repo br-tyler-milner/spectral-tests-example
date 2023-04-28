@@ -6,7 +6,8 @@ import { IRuleResult, Spectral, Document, Ruleset, RulesetDefinition } from '@st
 import { httpAndFileResolver } from '@stoplight/spectral-ref-resolver';
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { bundleAndLoadRuleset } from "@stoplight/spectral-ruleset-bundler/with-loader";
+// import { bundleAndLoadRuleset } from "@stoplight/spectral-ruleset-bundler/with-loader";
+import { bundleAndLoadRuleset } from "@stoplight/spectral-ruleset-bundler/dist/loader/node";
 import { fetch } from "@stoplight/spectral-runtime";
 
 export type RuleName = keyof Ruleset['rules'];
