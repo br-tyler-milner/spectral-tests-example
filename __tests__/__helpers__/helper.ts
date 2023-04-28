@@ -4,7 +4,10 @@
 
 import { IRuleResult, Spectral, Document, Ruleset, RulesetDefinition } from '@stoplight/spectral-core';
 import { httpAndFileResolver } from '@stoplight/spectral-ref-resolver';
-import myRuleset from '../../ruleset';
+import * as fs from "node:fs";
+import * as path from "node:path";
+import { bundleAndLoadRuleset } from "@stoplight/spectral-ruleset-bundler/with-loader";
+import { fetch } from "@stoplight/spectral-runtime";
 
 export type RuleName = keyof Ruleset['rules'];
 
@@ -35,6 +38,10 @@ export default (ruleName: RuleName, tests: Scenario): void => {
 
 export function createWithRules(rules: (keyof Ruleset['rules'])[]): Spectral {
     const s = new Spectral({ resolver: httpAndFileResolver });
+
+    // Load the ruleset from .spectral.yaml file
+    const filePath = path.resolve("../../../.spectral.yaml")
+    const myRuleset = bundleAndLoadRuleset(path.resolve(filePath), { fs, fetch })
 
     s.setRuleset({
         extends: [
