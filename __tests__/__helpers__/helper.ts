@@ -4,7 +4,7 @@
 
 import { IRuleResult, Spectral, Document, Ruleset, RulesetDefinition } from '@stoplight/spectral-core';
 import { httpAndFileResolver } from '@stoplight/spectral-ref-resolver';
-import myRuleset from '../../src/ruleset';
+import myRuleset from '../../ruleset';
 
 export type RuleName = keyof Ruleset['rules'];
 

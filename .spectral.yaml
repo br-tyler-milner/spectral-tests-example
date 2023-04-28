@@ -1,2 +1,18 @@
 extends:
   - "spectral:oas"
+
+rules:
+  response-must-have-500:
+    description: "All responses should have a `500` response defined."
+    message: "All endpoints must have a `500` response defined."
+    severity: error
+    formats:
+      - "oas3"
+    given: "$.paths[*].[get,put,post,delete,options,head,patch,trace].responses"
+    then:
+      - function: "defined"
+        field: "500"
+      - function: "pattern"
+        functionOptions:
+          match: "^Internal Server Error$"
+        field: "500.description"
