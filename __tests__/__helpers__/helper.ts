@@ -1,13 +1,13 @@
 // Author: Jakub Rozek, Stoplight.io
 // License: Apache License 2.0
 // https://github.com/stoplightio/spectral/blob/develop/packages/rulesets/src/__tests__/__helpers__/tester.ts
+// Modified by Tyler Milner for loading ruleset from .spectral.yaml file
 
 import { IRuleResult, Spectral, Document, Ruleset, RulesetDefinition } from '@stoplight/spectral-core';
 import { httpAndFileResolver } from '@stoplight/spectral-ref-resolver';
 import * as fs from "node:fs";
 import * as path from "node:path";
 import { bundleAndLoadRuleset } from "@stoplight/spectral-ruleset-bundler/with-loader";
-// import { bundleAndLoadRuleset } from "@stoplight/spectral-ruleset-bundler/dist/loader/node";
 import { fetch } from "@stoplight/spectral-runtime";
 
 export type RuleName = keyof Ruleset['rules'];
