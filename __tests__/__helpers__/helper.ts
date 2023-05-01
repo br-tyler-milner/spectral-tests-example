@@ -41,8 +41,8 @@ export async function createWithRules(rules: (keyof Ruleset['rules'])[]): Promis
     const s = new Spectral({ resolver: httpAndFileResolver });
 
     // Load the ruleset from .spectral.yaml file
-    const filePath = path.resolve(".spectral.yaml");
-    const myRuleset = await bundleAndLoadRuleset(path.resolve(filePath), { fs, fetch });
+    const filePath = path.join(__dirname, "../", "../", ".spectral.yaml");
+    const myRuleset = await bundleAndLoadRuleset(filePath, { fs, fetch });
 
     s.setRuleset({
         extends: [
