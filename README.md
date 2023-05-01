@@ -33,8 +33,12 @@ Additionally, in order to get the `spectral-ruleset-bundler` package to compile 
 ```json
 {
     "compilerOptions": {
-        "module": "node16",
         "moduleResolution": "node16"
     }
 }
+```
+
+The `tsconfig.json` configured as above avoids the following error when running `npm test`:
+```
+error TS2307: Cannot find module '@stoplight/spectral-ruleset-bundler/with-loader' or its corresponding type declarations.
 ```
