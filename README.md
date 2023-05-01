@@ -27,3 +27,5 @@ Tests have been setup inside of the `__tests__` folder. Since this just a simple
 
 #### Ruleset Bundler Dependency
 Since this approach uses a `ruleset.ts` file rather than a `.spectral.yaml` file, the [@stoplight/spectral-ruleset-bundler](https://www.npmjs.com/package/@stoplight/spectral-ruleset-bundler) dependency defined in `package.json` is technically not necessary for this version of the project. The `@stoplight/spectral-ruleset-bundler` is only necessary when needing to load a YAML ruleset as is done in the `main` branch and is only included here to make switching between the branches seamless (i.e. no need to re-run `npm install` when switching between the branches).
+
+Additionally, the `main` branch also makes use of a `tsconfig.json` file in order to get the `spectral-ruleset-bundler` package to compile properly with TypeScript. Since this branch doesn't load a YAML ruleset, the `tsconfig.json` file has been omitted.
