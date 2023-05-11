@@ -25,7 +25,9 @@ A basic Spectral ruleset has been created in the root of the repo as `.spectral.
 ### Tests
 Tests have been setup inside of the `__tests__` folder. Since this just a simple example, there is only one test file - `response-must-have-500.test.ts`. There is also a test helper setup in `__helpers__/helper.ts` based on [Testing Spectral Style Guides with Jest](https://apisyouwonthate.com/blog/testing-spectral-style-guides-with-jest/).
 
-#### Test Helper Updates for Loading YAML Ruleset
+## Additional Information
+
+### Test Helper Updates for Loading YAML Ruleset
 Some minor updates have been made to `helper.ts` to load the style guide ruleset from a `.spectral.yaml` file using [@stoplight/spectral-ruleset-bundler
 ](https://www.npmjs.com/package/@stoplight/spectral-ruleset-bundler) rather than from a `ruleset.ts` file. The primary change involved use of the `bundleAndLoadRuleset()` function to load the YAML ruleset rather than being able to directly use the ruleset exported from `ruleset.ts`.
 
@@ -43,7 +45,10 @@ The `tsconfig.json` configured as above avoids the following error when running 
 error TS2307: Cannot find module '@stoplight/spectral-ruleset-bundler/with-loader' or its corresponding type declarations.
 ```
 
-## Debugging Custom Functions
+### Running Tests in VS Code
+A `launch.json` file has been setup to enable the tests to be run and debugged using VS Code. Simply open up the project in VS Code, select the "Run and Debug" tab, and then run the "Debug Jest Tests" configuration. The configuration was created according to the recommendations in [Debugging in VS Code](https://jestjs.io/docs/troubleshooting#debugging-in-vs-code) in the Jest documentation.
+
+### Debugging Custom Functions
 The `request-must-have-accept-language-header` custom rule utilizes a custom function called `hasPathItemRequestHeader()` defined in `.ruleset-functions/hasPathItemRequestHeader.js`. Unfortunately, Spectral does not support using TypeScript for custom functions which makes debugging your custom functions using breakpoints trickier. For instance, in VS Code, any breakpoints you set in `hasPathItemRequestHeader()` will turn into "Unbound Breakpoints" when running the tests and the debugger will fail to pick them up and pause execution.
 
 In order to get around this, you need to manually add [debugger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) statements to the code where you want the debugger to pause execution. For instance:
