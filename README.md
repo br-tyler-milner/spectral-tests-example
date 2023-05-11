@@ -42,3 +42,19 @@ The `tsconfig.json` configured as above avoids the following error when running 
 ```
 error TS2307: Cannot find module '@stoplight/spectral-ruleset-bundler/with-loader' or its corresponding type declarations.
 ```
+
+## Debugging Custom Functions
+The `request-must-have-accept-language-header` custom rule utilizes a custom function called `hasPathItemRequestHeader()` defined in `.ruleset-functions/hasPathItemRequestHeader.js`. Unfortunately, Spectral does not support using TypeScript for custom functions which makes debugging your custom functions using breakpoints trickier. For instance, in VS Code, any breakpoints you set in `hasPathItemRequestHeader()` will turn into "Unbound Breakpoints" when running the tests and the debugger will fail to pick them up and pause execution.
+
+In order to get around this, you need to manually add [debugger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) statements to the code where you want the debugger to pause execution. For instance:
+```javascript
+function hasPathItemRequestHeader(input, options, { path, document, documentInventory, rule }) {
+  // ...
+
+  debugger; // <-- the debugger will pause execution here
+
+  // ...
+}
+```
+
+For more information, see [this issue](https://github.com/stoplightio/spectral/issues/1779) in the Spectral repository.
