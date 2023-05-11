@@ -1,6 +1,13 @@
+# Import publicly available style guides
 extends:
   - "spectral:oas"
 
+# Declare custom functions used in custom rules
+functions:
+  - "hasPathItemRequestHeader"
+functionsDir: ".ruleset-functions"
+
+# Define custom rules
 rules:
   response-must-have-500:
     description: "All responses should have a `500` response defined."
@@ -16,3 +23,15 @@ rules:
         functionOptions:
           match: "^Internal Server Error$"
         field: "500.description"
+
+  request-must-have-accept-language-header:
+    description: "PathItem request parameters should contain one instance of the specified header."
+    message: "{{error}}"
+    severity: "error"
+    formats:
+      - "oas3"
+    given: "$.paths[*].parameters"
+    then:
+      - function: "hasPathItemRequestHeader"
+        functionOptions:
+          name: "Accept-Language"
