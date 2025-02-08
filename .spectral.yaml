@@ -1,7 +1,22 @@
 extends:
   - "spectral:oas"
 
+functions:
+  - "myCustomFunction"
+functionsDir: "functions"
+
 rules:
+  http-status-obsolete:
+    formats: [oas3]
+    severity: warn
+    message: "{{property}} is an obsolete or unused HTTP status code"
+    given: $.paths.*.*.responses
+    then:
+      field: "@key"
+      function: myCustomFunction
+      functionOptions:
+        values: ["306", "418", "510"]
+
   response-must-have-500:
     description: "All responses should have a `500` response defined."
     message: "All endpoints must have a `500` response defined."

@@ -32,6 +32,8 @@ paths:
                 $ref: '#/components/schemas/Pet'
         '405':
           description: Invalid input
+        '418':
+          description: I'm a teapot
       security:
         - petstore_auth:
             - 'write:pets'

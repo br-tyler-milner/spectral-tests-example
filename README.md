@@ -10,6 +10,7 @@ This project explores 2 approaches to creating unit tests for custom Spectral ru
 1. Install [Node.js](https://nodejs.org) if it's not already installed (recommend installation via a version manager like [nvm](https://github.com/nvm-sh/nvm)).
 2. Install dependencies: `npm install`.
 3. Run tests: `npm test`.
+4. (Optional) Run Spectral manually: `spectral lint ./reference/openapi.yaml`
 
 ## Project Structure
 ### OpenAPI Specification
