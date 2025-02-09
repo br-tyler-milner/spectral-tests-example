@@ -3,7 +3,7 @@ extends:
 
 functions:
   - "myCustomFunction"
-functionsDir: "functions"
+functionsDir: "dist/functions"
 
 rules:
   http-status-obsolete:
