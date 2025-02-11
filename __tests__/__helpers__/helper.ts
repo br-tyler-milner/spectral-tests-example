@@ -40,7 +40,7 @@ export function createWithRules(rules: (keyof Ruleset['rules'])[]): Spectral {
         extends: [
             [myRuleset as RulesetDefinition, 'off'],
         ],
-        rules: rules.reduce((obj, name) => {
+        rules: rules.reduce((obj: Record<string, boolean>, name) => {
             obj[name] = true;
             return obj;
         }, {}),
