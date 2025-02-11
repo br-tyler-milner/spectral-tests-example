@@ -1,6 +1,7 @@
 import { defined, pattern } from "@stoplight/spectral-functions";
 import { oas3 } from "@stoplight/spectral-formats";
 import { DiagnosticSeverity } from "@stoplight/types";
+import myCustomFunction from "./functions/myCustomFunction";
 
 export default {
     // extends: ['spectral:oas'],
@@ -25,6 +26,20 @@ export default {
             ],
             formats: [oas3],
             severity: DiagnosticSeverity.Error,
+        },
+        'http-status-obsolete': {
+            description: 'Obsolete or unused HTTP status codes should not be used.',
+            message: '{{property}} is an obsolete or unused HTTP status code',
+            given: "$.paths.*.*.responses",
+            then: {
+                function: myCustomFunction,
+                field: '@key',
+                functionOptions: {
+                    values: ['306', '418', '510']
+                }
+            },
+            formats: [oas3],
+            severity: DiagnosticSeverity.Warning,
         }
     }
 };
