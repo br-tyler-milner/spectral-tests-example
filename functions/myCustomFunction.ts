@@ -4,7 +4,7 @@
 import { createRulesetFunction, RulesetFunctionContext } from "@stoplight/spectral-core";
 
 // Define the interface for the options parameter
-interface Options {
+export interface Options {
     values: string[];
 }
 

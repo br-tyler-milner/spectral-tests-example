@@ -1,5 +1,29 @@
 {
+  "name": "spectral-tests-example-style-guide",
+  "version": "0.1.0",
+  "description": "API style guide to be used with Spectral OpenAPI linter.",
+  "private": true,
+  "keywords": [
+    "openapi",
+    "openapi3",
+    "openapi31",
+    "api-design"
+  ],
+  "homepage": "https://github.com/br-tyler-milner/spectral-tests-example#readme",
+  "bugs": {
+    "url": "https://github.com/br-tyler-milner/spectral-tests-example/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/br-tyler-milner/spectral-tests-example.git"
+  },
+  "license": "MIT",
+  "author": "Tyler Milner <tyler.milner@bottlerocketstudios.com>",
+  "type": "module",
+  "main": "dist/ruleset.js",
+  "module": "dist/ruleset.mjs",
   "scripts": {
+    "build": "tsup ruleset.ts --format esm,cjs --dts",
     "test": "jest"
   },
   "devDependencies": {
@@ -10,6 +34,7 @@
     "jest": "^29.5.0",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
+    "tsup": "^8.3.6",
     "typescript": "^5.0.4"
   }
 }
