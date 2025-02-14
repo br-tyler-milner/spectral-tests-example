@@ -27,6 +27,8 @@ function myCustomFunction(targetVal: string, options: Options) {
                 message: `Value must be different from "${values.join(',')}".`,
             },
         ];
+    } else {
+        return [];
     }
 }
 
