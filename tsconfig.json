@@ -1,17 +1,24 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "ESNext",
-    "moduleResolution": "node",
+    "target": "ES2024",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "lib": [
+      "ES2024"
+    ],
+    "declarationDir": "./dist/types",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
+    "checkJs": true,
+    "allowJs": true,
     "declaration": true,
     "declarationMap": true,
-    "sourceMap": true
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["./**/*.ts"],
-  "exclude": ["node_modules", "dist"]
+  "files": [
+    "./ruleset.ts"
+  ]
 }

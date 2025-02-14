@@ -20,10 +20,15 @@
   "license": "MIT",
   "author": "Tyler Milner <tyler.milner@bottlerocketstudios.com>",
   "type": "module",
+  "exports": "./dist/ruleset.js",
+  "types": "./dist/ruleset.d.ts",
   "main": "dist/ruleset.js",
-  "module": "dist/ruleset.mjs",
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
   "scripts": {
-    "build": "tsup ruleset.ts --format esm,cjs --dts",
+    "build": "tsup",
     "test": "jest"
   },
   "devDependencies": {
