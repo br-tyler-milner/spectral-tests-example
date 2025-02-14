@@ -17,7 +17,10 @@ A basic OpenAPI 3 file based on the [Swagger Petstore example](https://github.co
 
 This API spec is more to demonstrate an expected project structure and isn't necessarily used by the tests. By default, Stoplight Studio will create your OpenAPI specs inside of a `reference` folder.
 
-You can also manually lint this API spec by installing the [Spectral CLI](https://github.com/stoplightio/spectral#-installation) and then running `spectral lint reference/openapi.yaml --ruleset ruleset.ts`.
+You can also manually lint this API spec:
+1. Install the [Spectral CLI](https://github.com/stoplightio/spectral#-installation): `npm install -g @stoplight/spectral-cli`.
+2. Build the project: `npm run build`.
+3. Run Spectral against the OpenAPI spec using the generated ruleset: `spectral lint reference/openapi.yaml --ruleset dist/ruleset.mjs`.
 
 ### Spectral Ruleset
 A basic Spectral ruleset has been created in the root of the repo as `.spectral.yaml`. The ruleset inherits from the default Spectral "oas" ruleset and also defines one custom rule, `response-must-have-500`.
