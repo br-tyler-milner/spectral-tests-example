@@ -1,7 +1,7 @@
 // Import the 'createRulesetFunction' Spectral function using ES6 syntax.
 // The custom function must be exported using the createRulesetFunction function
 // if it utilizes a JSON schema to define its input and options parameters.
-import { createRulesetFunction, RulesetFunctionContext } from "@stoplight/spectral-core";
+import { createRulesetFunction } from "@stoplight/spectral-core";
 
 // Define the interface for the options parameter
 export interface Options {
@@ -14,8 +14,7 @@ export interface Options {
 // The custom function takes three parameters:
 // - targetVal: the value to be checked (should match the schema for the rule's 'given' property defined in the .spectral.yml ruleset, also taking into account the 'then.field' filter if it's utilized)
 // - options: an object containing a 'values' array (should match the schema for the rule's 'then.functionOptions' property defined in the .spectral.yml ruleset)
-// - context: an object containing properties that provide the context about how the custom function is called ('path' - the path to 'targetVal' in the form of an array of strings, 'document' - the document being linted, 'rule' - the rule that's using the function, 'documentInventory' - provides access to resolved and unresolved documents, the $ref resolution graph, and other advanced properties)
-function myCustomFunction(targetVal: string, options: Options, context: RulesetFunctionContext) {
+function myCustomFunction(targetVal: string, options: Options) {
     // Get the 'values' property defined in the 'functionOptions' object, which should be an array of strings (e.g. ["418", "510"])
     const { values } = options;
 
