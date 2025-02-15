@@ -38,8 +38,8 @@
     "@stoplight/spectral-functions": "^1.9.3"
   },
   "devDependencies": {
-    "@stoplight/types": "^13.20.0",
-    "@types/jest": "^28.1.8",
+    "@stoplight/types": "^14.1.1",
+    "@types/jest": "^29.5.14",
     "jest": "^28.1.3",
     "ts-jest": "^28.0.8",
     "ts-node": "^10.9.1",
