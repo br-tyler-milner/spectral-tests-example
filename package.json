@@ -10,7 +10,8 @@
     "src/**/*"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "npm run clean && tsup",
+    "clean": "rm -rf dist",
     "test": "TS_NODE_PROJECT='./tsconfig.jest.json' jest"
   },
   "repository": {
