@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "tsup",
-    "test": "jest"
+    "test": "TS_NODE_PROJECT='./tsconfig.jest.json' jest"
   },
   "repository": {
     "type": "git",
