@@ -1,7 +1,7 @@
 import { defined, pattern } from "@stoplight/spectral-functions";
 import { oas3 } from "@stoplight/spectral-formats";
 import { DiagnosticSeverity } from "@stoplight/types";
-import myCustomFunction from "./functions/myCustomFunction";
+import myCustomFunction from "./functions/myCustomFunction.js";
 
 export default {
     // extends: ['spectral:oas'],
