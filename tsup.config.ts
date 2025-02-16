@@ -3,18 +3,9 @@ export default <Options>{
   entry: ["src/ruleset.ts"],
   clean: true,
   dts: true,
-  target: "es2022",
-  format: ["cjs", "esm"],
+  target: "ES2022",
+  format: ["esm"],
   sourcemap: true,
   noExternal: ["@stoplight/types"],
-  external: ["@stoplight/spectral-core"],
-  footer({ format }) {
-    if (format === "cjs") {
-      return {
-        js: "module.exports = module.exports.default;",
-      };
-    }
-
-    return {};
-  },
+  external: ["@stoplight/spectral-core"]
 };
