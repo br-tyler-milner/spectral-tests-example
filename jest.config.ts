@@ -17,5 +17,8 @@ export default async (): Promise<Config> => {
         },
       ],
     },
+    moduleNameMapper: {
+      "(.+)\\.js": "$1",
+    },
   };
 };
