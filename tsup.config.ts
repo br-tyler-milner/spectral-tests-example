@@ -3,7 +3,7 @@ export default <Options>{
   entry: ["src/ruleset.ts"],
   clean: true,
   dts: true,
-  target: "es2018",
+  target: "es2022",
   format: ["cjs", "esm"],
   sourcemap: true,
   noExternal: ["@stoplight/types"],
