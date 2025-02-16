@@ -3,7 +3,7 @@ A basic project showing how to to unit test custom [Spectral](https://github.com
 
 ## About This Project
 This project explores 2 approaches to creating unit tests for custom Spectral rulesets via the following branches:
-1. **typescript-ruleset** - Ruleset defined in `ruleset.ts` TypeScript file. This mirrors the approach outlined in Phil Sturgeon's article above. The benefit to this approach is the ability for TypeScript to provide basic type checking for the ruleset definition itself. However, it is perhaps less friendly to those that already have a `.spectral.yaml` or are new to API linting using Spectral due to the need for some background in TypeScript.
+1. **typescript-ruleset** - Ruleset defined in `src/ruleset.ts` TypeScript file. This mirrors the approach outlined in Phil Sturgeon's article above. The benefit to this approach is the ability for TypeScript to provide basic type checking for the ruleset definition itself. However, it is perhaps less friendly to those that already have a `.spectral.yaml` or are new to API linting using Spectral due to the need for some background in TypeScript.
 2. **main** - Ruleset defined in `.spectral.yaml` YAML file. Here, TypeScript is only used for the unit tests themselves and the ruleset is defined in YAML (JSON would probably work as well). This is probably a bit closer to what someone would encounter when building out a Spectral ruleset for the first time by following the [Spectral documentation](https://docs.stoplight.io/docs/spectral/674b27b261c3c-overview#1-create-a-local-ruleset).
 
 ## Getting Started

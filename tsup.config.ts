@@ -1,6 +1,6 @@
 import type { Options } from 'tsup';
 export default <Options>{
-  entry: ["ruleset.ts"],
+  entry: ["src/ruleset.ts"],
   clean: true,
   dts: true,
   target: "es2018",
