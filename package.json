@@ -7,7 +7,7 @@
   "types": "./dist/ruleset.d.ts",
   "main": "./dist/ruleset.js",
   "files": [
-    "src/**/*"
+    "dist/**/*"
   ],
   "scripts": {
     "build": "npm run clean && tsup",
