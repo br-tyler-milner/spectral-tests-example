@@ -1,5 +1,5 @@
 import { DiagnosticSeverity } from '@stoplight/types';
-import testRule from './__helpers__/helper';
+import testRule from './__helpers__/helper.js';
 
 testRule('response-must-have-500', [
     {
