@@ -1,3 +1,4 @@
+/* TypeScript configuration settings based on https://www.totaltypescript.com/tsconfig-cheat-sheet */
 {
   "compilerOptions": {
     /* Base Options: */
