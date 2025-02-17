@@ -33,5 +33,6 @@
     /* Emit */
     "stripInternal": true,
     "noEmitOnError": true,
-  }
+  },
+  "include": ["src/**/*"]
 }
