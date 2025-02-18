@@ -3,6 +3,7 @@
 // https://github.com/stoplightio/spectral/blob/develop/packages/rulesets/src/__tests__/__helpers__/tester.ts
 
 import type { IRuleResult, RulesetDefinition } from '@stoplight/spectral-core';
+import type { IParserResult } from '@stoplight/types';
 import { Spectral, Document, Ruleset } from '@stoplight/spectral-core';
 import { httpAndFileResolver } from '@stoplight/spectral-ref-resolver';
 import myRuleset from '../../src/ruleset.js';
@@ -12,7 +13,7 @@ export type RuleName = keyof Ruleset['rules'];
 type Scenario = ReadonlyArray<
     Readonly<{
         name: string;
-        document: Record<string, unknown> | Document<unknown, any>;
+        document: Record<string, unknown> | Document<unknown, IParserResult<unknown, object, unknown, unknown>>;
         errors: ReadonlyArray<Partial<IRuleResult>>;
         mocks?: Record<string, Record<string, unknown>>;
     }>
