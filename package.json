@@ -13,6 +13,8 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && tsup",
     "type-check": "tsc --noEmit",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "test": "TS_NODE_PROJECT='./tsconfig.jest.json' jest"
   },
   "repository": {
@@ -36,12 +38,17 @@
     "@stoplight/spectral-functions": "^1.9.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.20.0",
     "@stoplight/types": "^14.1.1",
     "@types/jest": "^29.5.14",
+    "@typescript-eslint/eslint-plugin": "^8.24.1",
+    "@typescript-eslint/parser": "^8.24.1",
+    "eslint": "^9.20.1",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "tsup": "^8.3.6",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.1"
   }
 }
