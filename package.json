@@ -15,7 +15,8 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "test": "TS_NODE_PROJECT='./tsconfig.jest.json' jest"
+    "test": "TS_NODE_PROJECT='./tsconfig.jest.json' jest",
+    "all": "npm run type-check && npm run lint:fix && npm run build && npm run test"
   },
   "repository": {
     "type": "git",
