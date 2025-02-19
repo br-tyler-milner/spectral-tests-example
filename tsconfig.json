@@ -33,7 +33,7 @@
 
     /* Emit */
     "stripInternal": true,
-    "noEmitOnError": true,
+    "noEmitOnError": true
   },
-  "include": ["src/**/*", "__tests__/**/*", "*.config.ts"],
+  "include": ["src/**/*", "__tests__/**/*", "*.config.ts"]
 }

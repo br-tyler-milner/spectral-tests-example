@@ -1,50 +1,50 @@
-import { DiagnosticSeverity } from '@stoplight/types';
-import testRule from './__helpers__/helper.js';
+import { DiagnosticSeverity } from '@stoplight/types'
+import testRule from './__helpers__/helper.js'
 
 testRule('http-status-obsolete', [
-    {
-        name: 'valid case',
-        document: {
-            openapi: '3.1.0',
-            info: { version: '1.0' },
-            paths: {
-                '/': {
-                    get: {
-                        responses: {
-                            '400': {
-                                description: "Bad Request"
-                            }
-                        }
-                    }
-                }
-            }
+  {
+    name: 'valid case',
+    document: {
+      openapi: '3.1.0',
+      info: { version: '1.0' },
+      paths: {
+        '/': {
+          get: {
+            responses: {
+              '400': {
+                description: 'Bad Request',
+              },
+            },
+          },
         },
-        errors: [],
+      },
     },
+    errors: [],
+  },
 
-    {
-        name: 'invalid case',
-        document: {
-            openapi: '3.1.0',
-            info: { version: '1.0' },
-            paths: {
-                '/': {
-                    get: {
-                        responses: {
-                            '418': {
-                                description: "I'm a teapot"
-                            }
-                        }
-                    }
-                }
-            }
+  {
+    name: 'invalid case',
+    document: {
+      openapi: '3.1.0',
+      info: { version: '1.0' },
+      paths: {
+        '/': {
+          get: {
+            responses: {
+              '418': {
+                description: "I'm a teapot",
+              },
+            },
+          },
         },
-        errors: [
-            {
-                message: '418 is an obsolete or unused HTTP status code',
-                path: ['paths', '/', 'get', 'responses', '418'],
-                severity: DiagnosticSeverity.Warning
-            }
-        ],
-    }
-]);
+      },
+    },
+    errors: [
+      {
+        message: '418 is an obsolete or unused HTTP status code',
+        path: ['paths', '/', 'get', 'responses', '418'],
+        severity: DiagnosticSeverity.Warning,
+      },
+    ],
+  },
+])
