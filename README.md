@@ -94,3 +94,53 @@ reinstall the dependencies when switching between branches:
 ```Shell
 npm install
 ```
+
+### Dependencies
+
+See below for a quick rundown of the dependencies in use:
+
+**Main - Ruleset:**
+
+- `@stoplight/spectral-formats` - formats that Spectral supports (e.g. OpenAPI,
+  AsyncAPI, etc.)
+- `@stoplight/spectral-functions` - built-in Spectral functions that allow for
+  creating linter rules (e.g. `truthy`, `length`, `pattern`, etc.)
+
+**Development - Typing:**
+
+- `typescript` - static typing for JavaScript
+
+**Development - Testing:**
+
+- `@stoplight/types` - Spectral types, used in rule unit tests
+- `@types/jest` - Jest types, used to create units tests using Jest
+- `jest` - Unit testing library for JavaScript
+- `ts-jest` - enables TypeScript support for Jest
+- `ts-node` - enables TypeScript configuration file support for Jest
+  (`jest.config.ts`)
+
+**Development - Linting:**
+
+- `@eslint/js` - ESLint provided/recommended JavaScript rules
+- `@typescript-eslint/eslint-plugin` - TypeScript plugin to enable TypeScript
+  support for ESLint
+- `@typescript-eslint/parser` - TypeScript parser to enable TypeScript support
+  for ESLint
+- `eslint` - JavaScript/TypeScript linter for linting all JavaScript/TypeScript
+  code
+- `typescript-eslint` - enables TypeScript support for ESLint
+- `jiti` - enables TypeScript configuration file support for ESLint
+  (`eslint.config.ts`)
+
+**Development - Formatting:**
+
+- `@types/eslint-config-prettier` - type definitions for
+  `eslint-config-prettier` package
+- `eslint-config-prettier` - ESLint config that disables ESLint rules that may
+  conflict with `prettier`
+- `prettier` - JavaScript/TypeScript formatter
+
+**Development - Building:**
+
+- `tsup` - build tool used to package up the `ruleset.ts` into a JavaScript
+  ruleset definition that Spectral can use
