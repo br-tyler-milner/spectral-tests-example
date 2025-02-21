@@ -105,6 +105,7 @@ See below for a quick rundown of the dependencies in use:
   AsyncAPI, etc.)
 - `@stoplight/spectral-functions` - built-in Spectral functions that allow for
   creating linter rules (e.g. `truthy`, `length`, `pattern`, etc.)
+- `@stoplight/spectral-rulesets` - built-in [Spectral "oas" ruleset](https://docs.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules) that our custom ruleset extends
 
 **Development - Typing:**
 

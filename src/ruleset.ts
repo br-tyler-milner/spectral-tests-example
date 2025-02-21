@@ -2,10 +2,12 @@ import { defined, pattern } from '@stoplight/spectral-functions'
 import { oas3 } from '@stoplight/spectral-formats'
 import { DiagnosticSeverity } from '@stoplight/types'
 import myCustomFunction from './functions/myCustomFunction.js'
+import { oas as spectralOas } from '@stoplight/spectral-rulesets'
 
 export default {
-  // extends: ['spectral:oas'],
+  extends: [spectralOas],
   rules: {
+    // 'info-contact': 'off', // uncomment to disable built-in Spectral 'oas' ruleset 'info-contact' rule
     'response-must-have-500': {
       description: 'All responses should have a `500` response defined.',
       message: 'All endpoints must have a `500` response defined.',
