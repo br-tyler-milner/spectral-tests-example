@@ -6,6 +6,7 @@ import type { Linter } from 'eslint'
 export default [
   { files: ['**/*.{js,mjs,cjs,ts}'] }, // Apply to all JavaScript/TypeScript files (including configuration files)
   { languageOptions: { ecmaVersion: 2022 } }, // Match target in tsconfig.json / tsup.config.ts
+  { ignores: ['node_modules', 'dist'] }, // Ignore these directories
   pluginJs.configs.recommended, // ESLint predefined recommended config
   ...tseslint.configs.recommended, // TypeScript recommended config
   eslintConfigPrettier, // Turns off ESLint rules that conflict with Prettier
