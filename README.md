@@ -82,14 +82,11 @@ also a test helper setup in `__tests__/__helpers__/helper.ts` based on
 
 #### Ruleset Bundler Dependency
 
-Since this approach uses a `ruleset.ts` file rather than a `.spectral.yaml`
-file, the
+Since this approach uses third party JSON rulesets from the filesystem, the
 [@stoplight/spectral-ruleset-bundler](https://www.npmjs.com/package/@stoplight/spectral-ruleset-bundler)
-dependency defined in `package.json` is technically not necessary for this
-version of the project and has been removed. The
-`@stoplight/spectral-ruleset-bundler` is only necessary when needing to load a
-YAML ruleset as is done in the `main` branch. As such, you will need to
-reinstall the dependencies when switching between branches:
+dependency defined in `package.json` is necessary for this version of the
+project. As such, you may need to reinstall the dependencies when switching
+between branches:
 
 ```Shell
 npm install
