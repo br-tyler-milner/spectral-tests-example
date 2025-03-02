@@ -3,8 +3,24 @@ import { oas3 } from '@stoplight/spectral-formats'
 import { DiagnosticSeverity } from '@stoplight/types'
 import myCustomFunction from './functions/myCustomFunction.js'
 import { oas as spectralOas } from '@stoplight/spectral-rulesets'
+// import { fetch } from '@stoplight/spectral-runtime'
+// import * as fs from 'node:fs'
+// import * as path from 'node:path'
+// import { bundleAndLoadRuleset } from '@stoplight/spectral-ruleset-bundler/with-loader'
+
+// TODO: Importing local JSON ruleset is throwing runtime errors
+// const enforceHttpsRulesetPath = path.join(
+//   __dirname,
+//   '../public-rulesets/enforce-https/.spectral.json',
+// )
+// const enforceHttpsRuleset = bundleAndLoadRuleset(enforceHttpsRulesetPath, {
+//   fs,
+//   fetch,
+// })
 
 function buildRuleset() {
+  // console.log('enforceHttpsRulesetPath', enforceHttpsRulesetPath)
+  // console.log('enforceHttpsRuleset', enforceHttpsRuleset) // This is output as `Promise { <pending> }` - not being resolved properly?
   const baseRuleset = {
     extends: [spectralOas],
     rules: {
