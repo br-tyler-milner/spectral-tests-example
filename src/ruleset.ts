@@ -63,6 +63,11 @@ function buildRuleset() {
     },
   }
 
+  // TODO: Need to return all rulesets in a single extends?
+  // return {
+  //   extends: [spectralOas, baseRuleset, enforceHttpsRuleset],
+  // }
+
   return baseRuleset
 }
 
