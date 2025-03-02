@@ -5,7 +5,7 @@ import myCustomFunction from './functions/myCustomFunction.js'
 import { oas as spectralOas } from '@stoplight/spectral-rulesets'
 
 function buildRuleset() {
-  return {
+  const baseRuleset = {
     extends: [spectralOas],
     rules: {
       // 'info-contact': 'off', // uncomment to disable built-in Spectral 'oas' ruleset 'info-contact' rule
@@ -46,6 +46,8 @@ function buildRuleset() {
       },
     },
   }
+
+  return baseRuleset
 }
 
 export default buildRuleset()
