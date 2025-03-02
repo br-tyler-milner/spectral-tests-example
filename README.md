@@ -30,6 +30,16 @@ rulesets via the following branches:
    complete, with `tsup` used to compile/bundle the TypeScript ruleset into a
    JavaScript ruleset ready for use with the Spectral CLI (based on
    [spectral-owasp-ruleset](https://github.com/stoplightio/spectral-owasp-ruleset)).
+4. **typescript-ruleset_typescript-custom-functions_extend-public-rulesets-from-file_main-spectral-yaml** -
+   An advanced version of **typescript-ruleset_typescript-custom-functions**
+   where the main custom `ruleset.ts` extends the `spectral:oas` ruleset that's
+   brought in via the `@stoplight/spectral-rulesets` dependency. A top-level
+   `.spectral.yaml` also exists which extends the main custom ruleset as well as
+   the
+   [third-party `enforce-https` ruleset](https://apistylebook.stoplight.io/docs/enforce-https)
+   that exists as a JSON file inside of
+   `public-rulesets/enforce-https/.spectral.json` (since there is no `npm`
+   package available for the `enforce-https` ruleset).
 
 ## Getting Started
 
@@ -58,7 +68,7 @@ You can also manually lint this API spec:
    `npm install -g @stoplight/spectral-cli`.
 2. Build the project: `npm run build`.
 3. Run Spectral against the OpenAPI spec using the generated ruleset:
-   `spectral lint reference/openapi.yaml --ruleset dist/ruleset.js`.
+   `spectral lint reference/openapi.yaml --ruleset .spectral.yaml`.
 
 ### Spectral Ruleset
 

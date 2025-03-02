@@ -1,0 +1,4 @@
+# Extend from the primary custom ruleset and the third party file-based rulesets
+extends:
+  - './dist/ruleset.js'
+  - './public-rulesets/enforce-https/.spectral.json'

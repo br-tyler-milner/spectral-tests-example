@@ -18,7 +18,7 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "test": "TS_NODE_PROJECT='./tsconfig.jest.json' jest",
-    "spectral:lint": "spectral lint ./reference/**/*.yaml --ruleset ./dist/ruleset.js",
+    "spectral:lint": "spectral lint ./reference/**/*.yaml --ruleset .spectral.yaml",
     "all": "npm run types:check && npm run format:fix && npm run lint:fix && npm run build && npm run test && npm run spectral:lint"
   },
   "repository": {
